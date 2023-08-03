@@ -1,7 +1,17 @@
-class FileSystem {
-    root: Dir;
+class Dir {
+    dirs: { [key: string]: Dir };
+    files: { [key: string]: File };
 
     constructor() {
-        this.root = new Dir();
+        this.dirs = {};
+        this.files = {};
+    }
+}
+
+class File {
+    content: string;
+
+    constructor() {
+        this.content = "";
     }
 }
